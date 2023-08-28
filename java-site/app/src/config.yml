@@ -1,0 +1,54 @@
+
+site:
+#  theme: 'Editorial'
+  baseUrl: 'http://username.github.io/project'
+  about:
+    siteName: Mon Projet Java 
+    siteDescription: nouveau projet
+
+Editorial:
+  primaryColor: '#D24231'
+  legacySearch: false
+  social:
+    github: 'username/project'
+  metaComponents:
+    - type: 'orchidSearch'
+  menu:
+    - type: 'separator'
+      title: 'Wiki'
+    - type: 'wiki'
+#    - type: 'page'
+      itemId: 'Changelog'
+    - type: 'separator'
+      title: 'API Docs'
+    - type: 'sourcedocPages'
+    - type: 'separator'
+      moduleType: 'javadoc'
+      node: 'classes'
+      asSubmenu: true
+      submenuTitle: 'Classes'
+    - type: 'sourcedocPages'
+      moduleType: 'javadoc'
+      node: 'packages'
+      asSubmenu: true
+      submenuTitle: 'Packages'
+
+javadoc:
+  sourceDirs:
+    - 'app/src'
+  pages:
+    menu:
+      - type: 'sourcedocPageLinks'
+        moduleType: 'javadoc'
+        itemTitleType: 'SIGNATURE'
+        includeItems: true
+  
+services:
+  publications:
+    stages:
+      githubPages:
+        branch: gh-pages
+        repo: 'project'
+        username: 'username'
+      githubReleases:
+        repo: 'username/project'
